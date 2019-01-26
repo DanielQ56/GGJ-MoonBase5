@@ -23,16 +23,16 @@ public class playerInteract : MonoBehaviour
 			if(hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.Space)) {
 				//GameObject doorObj = hit.transform.gameObject;
 				//GameObject doorObj = GameObject.Find("DoorHinge");
-				GameObject[] gos;
-				gos = GameObject.FindGameObjectsWithTag("DoorHinge");
+				GameObject[] doorHingeObjects;
+				doorHingeObjects = GameObject.FindGameObjectsWithTag("DoorHinge");
 				GameObject closest = null;
 				float distance = Mathf.Infinity;
 				Vector3 position = transform.position;
-				foreach(GameObject go in gos) {
-					Vector3 diff = go.transform.position - position;
+				foreach(GameObject d in doorHingeObjects) {
+					Vector3 diff = d.transform.position - position;
 					float curDistance = diff.sqrMagnitude;
 					if(curDistance < distance) {
-						closest = go;
+						closest = d;
 						distance = curDistance;
 					}
 				}
