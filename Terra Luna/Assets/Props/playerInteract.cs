@@ -17,8 +17,8 @@ public class playerInteract : MonoBehaviour
 		RaycastHit hit;
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
 		if(Physics.Raycast(transform.position, fwd, out hit, rayDist)) {
-			if(hit.collider.tag == "Interactive") {
-				Debug.Log("We can do something with this");
+			if(hit.collider.tag == "Interactive" && Input.GetKeyDown(KeyCode.Space)) {
+				askTargetToRespond();
 			}
 			
 		}
@@ -27,7 +27,7 @@ public class playerInteract : MonoBehaviour
     }
 	
 	void askTargetToRespond() {
-		
+		Debug.Log("asked the target to respond");
 	}
 	
 }
