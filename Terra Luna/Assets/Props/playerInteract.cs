@@ -20,10 +20,11 @@ public class playerInteract : MonoBehaviour
 			if(hit.collider.tag == "Interactive" && Input.GetKeyDown(KeyCode.Space)) {
 				askTargetToRespond();
 			}
+			if(hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.Space)) {
+				GameObject doorObj = hit.transform.gameObject;
+			}
 			
 		}
-		
-        //check if raycast from player hits a target that has the Interactive tag
     }
 	
 	void askTargetToRespond() {
