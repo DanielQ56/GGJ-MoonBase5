@@ -14,6 +14,10 @@ public class doorScript : MonoBehaviour
 	private Quaternion DoorClose;
 	private bool doorIsOpen;
 	
+	
+	bool closeDoor = false;
+	bool waitActive = false;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +34,7 @@ public class doorScript : MonoBehaviour
 		    doorIsOpen = true;
 			triggerDoorClose();
 	   } else if (doorIsOpen && !triggerOpen) { //close door
-			var DoorClose = Quaternion.Euler(0, 90f, 0);
+			var DoorClose = Quaternion.Euler(0, 0f, 0);
 		    transform.localRotation = Quaternion.Slerp(transform.localRotation, DoorClose, Time.deltaTime*Smooth);
 		    doorIsOpen = false;
 	   }
@@ -41,9 +45,21 @@ public class doorScript : MonoBehaviour
 		triggerOpen = true;
 	}
 	
+	
 	public void triggerDoorClose() {
-		triggerOpen = false;
-		yield WaitForSeconds (5);
+		if(!waitActive) {
+			StartCoroutine(Wait());
+		} 
+		if(closeDoor) {
+			triggerOpen = false;
+		}
 	}
 
+	IEnumerator Wait() {
+		waitActive = true;
+		yield return new WaitForSeconds(5.0f);
+		closeDoor = true;
+		waitActive = false;
+	}
+	
 }
