@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class doorScript : MonoBehaviour
 {
-	float Smooth = 1.5f;
+	public float Smooth = 2f;
 	float doorOpenY;
 	float doorCloseY;
 	float openAngle = 90f;
 	float closeAngle = 0f;
 	private bool triggerOpen;
+	private Quaternion DoorOpen;
 	
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,9 @@ public class doorScript : MonoBehaviour
     void Update()
     {
        if(triggerOpen == true) {
-		   var DoorOpen = Quaternion.Euler(0, openAngle, 0);
+		   var DoorOpen = Quaternion.Euler(0, -90f, 0);
 		   transform.localRotation = Quaternion.Slerp(transform.localRotation, DoorOpen, Time.deltaTime*Smooth);
+		   
 	   } 
 	   
     }
@@ -31,4 +33,5 @@ public class doorScript : MonoBehaviour
 	public void triggerDoorOpen() {
 		triggerOpen = true;
 	}
+
 }
