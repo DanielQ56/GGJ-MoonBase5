@@ -79,7 +79,7 @@ MonoBehaviour:
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
     Value: 0
-    m_MaxSpeed: 200
+    m_MaxSpeed: 75
     m_AccelTime: 0.05
     m_DecelTime: 0.05
     m_InputAxisName: CameraRotate
@@ -204,7 +204,7 @@ MonoBehaviour:
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
     Value: 0
-    m_MaxSpeed: 200
+    m_MaxSpeed: 75
     m_AccelTime: 0.05
     m_DecelTime: 0.05
     m_InputAxisName: CameraRotate
@@ -346,7 +346,7 @@ MonoBehaviour:
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
     Value: 0
-    m_MaxSpeed: 200
+    m_MaxSpeed: 75
     m_AccelTime: 0.05
     m_DecelTime: 0.05
     m_InputAxisName: CameraRotate
@@ -409,7 +409,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612016978}
-  m_LocalRotation: {x: 0.0064822137, y: -0.004805611, z: 0.026902089, w: 0.99960554}
+  m_LocalRotation: {x: 0.006482332, y: -0.004805577, z: 0.026902018, w: 0.9996055}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -485,7 +485,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152793171}
-  m_LocalRotation: {x: 0.000000014901159, y: -0.00000007295602, z: -0.9642328, w: -0.26505664}
+  m_LocalRotation: {x: -0.000000007450581, y: 0.000000036023266, z: -0.96423286, w: -0.26505685}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -561,7 +561,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974816604}
-  m_LocalRotation: {x: -0.0064281523, y: 0.001483233, z: -0.18754403, w: -0.98223406}
+  m_LocalRotation: {x: -0.0064282417, y: 0.0014832285, z: -0.18754433, w: -0.982234}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -692,7 +692,7 @@ MonoBehaviour:
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
     Value: 0
-    m_MaxSpeed: 200
+    m_MaxSpeed: 75
     m_AccelTime: 0.05
     m_DecelTime: 0.05
     m_InputAxisName: CameraRotate
