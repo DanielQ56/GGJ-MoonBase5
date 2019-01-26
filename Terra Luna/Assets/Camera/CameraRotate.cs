@@ -32,7 +32,7 @@ public class CameraRotate : MonoBehaviour
     }*/
     void CameraRotatation()
     {
-        transform.RotateAround(Vector3.zero, Vector3.up, Input.GetAxisRaw("CameraRotate") * rotateDegree);
+        transform.RotateAround(player.transform.position, Vector3.up, Input.GetAxisRaw("CameraRotate") * rotateDegree);
     }
 
     /*bool inDistance()
