@@ -22,6 +22,7 @@ public class playerInteract : MonoBehaviour
 			}
 			if(hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.Space)) {
 				GameObject doorObj = hit.transform.gameObject;
+				doorObj.GetComponent<doorScript>().triggerDoorOpen();
 			}
 			
 		}
