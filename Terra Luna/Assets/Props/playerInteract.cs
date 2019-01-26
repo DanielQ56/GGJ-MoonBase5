@@ -19,29 +19,55 @@ public class playerInteract : MonoBehaviour
 		if(Physics.Raycast(transform.position, fwd, out hit, rayDist)) {
 			if(hit.collider.tag == "Interactive" && Input.GetKeyDown(KeyCode.Space)) {
 				askTargetToRespond();
+			} else {
+				//door can only be closed on an update if a different interaction isnt happening
+				doorInteraction(hit);
 			}
-			if(hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.Space)) {
-				//GameObject doorObj = hit.transform.gameObject;
-				//GameObject doorObj = GameObject.Find("DoorHinge");
-				GameObject[] doorHingeObjects;
-				doorHingeObjects = GameObject.FindGameObjectsWithTag("DoorHinge");
-				GameObject closest = null;
-				float distance = Mathf.Infinity;
-				Vector3 position = transform.position;
-				foreach(GameObject d in doorHingeObjects) {
-					Vector3 diff = d.transform.position - position;
-					float curDistance = diff.sqrMagnitude;
-					if(curDistance < distance) {
-						closest = d;
-						distance = curDistance;
-					}
-				}
-				GameObject doorObj = closest;
-				doorObj.GetComponent<doorScript>().triggerDoorOpen();
-			}
-			
 		}
     }
+	
+	
+	void doorInteraction(RaycastHit hit) {
+		if(hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.Space)) {
+			//GameObject doorObj = hit.transform.gameObject;
+			//GameObject doorObj = GameObject.Find("DoorHinge");
+			
+			GameObject doorObj = findClosestGameObject("DoorHinge");
+			doorObj.GetComponent<doorScript>().triggerDoorOpen();
+		} /*else { //check if the door should be closed
+			//GameObject doorObj = findClosestGameObject("DoorHinge");
+			//doorObj.GetComponent<doorScript>().triggerDoorClose();
+			Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0);
+			int i = 0;
+			bool closeDoor = true;
+			while(i < hitColliders.Length) {
+				if(hitColliders[i].tag == "Door") {
+					closeDoor = false;
+				}
+			}
+			if(closeDoor) {
+				GameObject doorObj = findClosestGameObject("DoorHinge");
+				doorObj.GetComponent<doorScript>().triggerDoorClose();
+			}
+		}*/
+	}
+	
+	GameObject findClosestGameObject(string tagName) {
+		GameObject[] objs;
+		objs = GameObject.FindGameObjectsWithTag(tagName);
+		GameObject closest = null;
+		float distance = Mathf.Infinity;
+		Vector3 position = transform.position;
+		foreach(GameObject o in objs) {
+			Vector3 diff = o.transform.position - position;
+			float curDistance = diff.sqrMagnitude;
+			if(curDistance < distance) {
+				closest = o;
+				distance = curDistance;
+			}
+		}
+		return closest;
+	}
 	
 	void askTargetToRespond() {
 		Debug.Log("asked the target to respond");

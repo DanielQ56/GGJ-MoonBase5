@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 2c4a43f340765bc4990cba490a1a0fc7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: BedFrame01.001
+    100004: Bricks01
+    100006: Cylinder
+    100008: Cylinder.001
+    100010: Desk01
+    100012: Door
+    100014: Door02
+    100016: Door02.001
+    100018: Door02.002
+    100020: Icosphere
+    100022: Icosphere.001
+    100024: Icosphere.002
+    100026: Lamp
+    100028: Mound01
+    100030: Table01
+    100032: Table01.001
+    100034: Table01.002
+    100036: Table01.003
+    100038: Table01.004
+    100040: Table01.005
+    100042: Thingy
+    400000: //RootNode
+    400002: BedFrame01.001
+    400004: Bricks01
+    400006: Cylinder
+    400008: Cylinder.001
+    400010: Desk01
+    400012: Door
+    400014: Door02
+    400016: Door02.001
+    400018: Door02.002
+    400020: Icosphere
+    400022: Icosphere.001
+    400024: Icosphere.002
+    400026: Lamp
+    400028: Mound01
+    400030: Table01
+    400032: Table01.001
+    400034: Table01.002
+    400036: Table01.003
+    400038: Table01.004
+    400040: Table01.005
+    400042: Thingy
+    2100000: No Name
+    2100002: Material.002
+    2100004: Material.001
+    2300000: BedFrame01.001
+    2300002: Bricks01
+    2300004: Cylinder
+    2300006: Cylinder.001
+    2300008: Desk01
+    2300010: Door
+    2300012: Door02
+    2300014: Door02.001
+    2300016: Door02.002
+    2300018: Icosphere
+    2300020: Icosphere.001
+    2300022: Icosphere.002
+    2300024: Mound01
+    2300026: Table01
+    2300028: Table01.001
+    2300030: Table01.002
+    2300032: Table01.003
+    2300034: Table01.004
+    2300036: Table01.005
+    2300038: Thingy
+    3300000: BedFrame01.001
+    3300002: Bricks01
+    3300004: Cylinder
+    3300006: Cylinder.001
+    3300008: Desk01
+    3300010: Door
+    3300012: Door02
+    3300014: Door02.001
+    3300016: Door02.002
+    3300018: Icosphere
+    3300020: Icosphere.001
+    3300022: Icosphere.002
+    3300024: Mound01
+    3300026: Table01
+    3300028: Table01.001
+    3300030: Table01.002
+    3300032: Table01.003
+    3300034: Table01.004
+    3300036: Table01.005
+    3300038: Thingy
+    4300000: Table01.005
+    4300002: Table01.004
+    4300004: Table01.003
+    4300006: Table01.002
+    4300008: Table01.001
+    4300010: Door02.002
+    4300012: BedFrame01.001
+    4300014: Desk01
+    4300016: Table01
+    4300018: Icosphere.002
+    4300020: Icosphere.001
+    4300022: Icosphere
+    4300024: Cylinder.001
+    4300026: Thingy
+    4300028: Bricks01
+    4300030: Mound01
+    4300032: Door02.001
+    4300034: Door
+    4300036: Door02
+    4300038: Cylinder
+    10800000: Lamp
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
