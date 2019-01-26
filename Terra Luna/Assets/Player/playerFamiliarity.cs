@@ -20,7 +20,7 @@ public class playerFamiliarity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        testChangingFamiliarity();
     }
 
     public float currentFamiliarity()
@@ -28,7 +28,8 @@ public class playerFamiliarity : MonoBehaviour
         return currentPoints;
     }
 
-    public void addFamiliarity(float pointsToAdd)
+    public void addToFamiliarity(float pointsToAdd)
+    // Make pointsToAdd negative if you want to remove
     {
         if (pointsToAdd > (maxPoints - currentPoints)){
             currentPoints = maxPoints;
@@ -37,12 +38,13 @@ public class playerFamiliarity : MonoBehaviour
         }
     }
 
-    public void removeFamiliarity(float pointsToRemove)
+
+    void testChangingFamiliarity()
     {
-        if (pointsToRemove > (currentPoints - minPoints)){
-            currentPoints = minPoints;
-        } else {
-            currentPoints -= minPoints;
+        if (Input.GetKey("q")){
+            addToFamiliarity(-1);
+        } else if (Input.GetKey("e")){
+            addToFamiliarity(1);
         }
     }
 }
