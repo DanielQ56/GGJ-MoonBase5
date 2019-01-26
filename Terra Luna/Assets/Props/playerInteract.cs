@@ -18,8 +18,8 @@ public class playerInteract : MonoBehaviour
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
 		if(Physics.Raycast(transform.position, fwd, out hit, rayDist)) {
 			if(hit.collider.tag == "Interactive" && Input.GetKeyDown(KeyCode.Space)) {
-				askTargetToRespond();
-			} else {
+                hit.collider.gameObject.GetComponent<Interactable>().interact();
+            } else {
 				//door can only be closed on an update if a different interaction isnt happening
 				doorInteraction(hit);
 			}
