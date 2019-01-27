@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class playerInteract : MonoBehaviour
 {
-	public float rayDist = 1;
+    public float rayDist = 1;
+    [SerializeField] float boxX;
+    [SerializeField] float boxY;
+    [SerializeField] float boxZ;
+    [SerializeField] float maxDistance;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,15 +19,32 @@ public class playerInteract : MonoBehaviour
     void Update()
     {
 		RaycastHit hit;
+        
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
-		if(Physics.Raycast(transform.position, fwd, out hit, rayDist)) {
+        RaycastHit[] boxCasts = Physics.BoxCastAll(transform.position + transform.forward * rayDist, new Vector3(boxX, boxY, boxZ), transform.forward, transform.rotation, maxDistance);
+        if(boxCasts.Length > 0)
+        {
+            foreach(RaycastHit ray in boxCasts)
+            {
+                if(ray.collider.tag == "Interactive" && Input.GetKeyDown(KeyCode.Space))
+                {
+                    ray.collider.gameObject.GetComponent<Interactable>().interact();
+                }
+                else
+                {
+                    doorInteraction(ray);
+                }
+            }
+        }
+
+		/*if(Physics.Raycast(transform.position, fwd, out hit, rayDist)) {
 			if(hit.collider.tag == "Interactive" && Input.GetKeyDown(KeyCode.Space)) {
                 hit.collider.gameObject.GetComponent<Interactable>().interact();
             } else {
 				//door can only be closed on an update if a different interaction isnt happening
 				doorInteraction(hit);
 			}
-		}
+		}*/
     }
 	
 	

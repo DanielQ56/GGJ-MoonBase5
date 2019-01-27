@@ -26,9 +26,17 @@ public class Interactable : MonoBehaviour
         
         if (!interacted)
         {
-            Debug.Log("Interacted");
-            wallFamiliarity.addPoints(amountOfPoints);
-            interacted = true;
+            string tag = gameObject.name;
+            switch(tag)
+            {
+                case "Moon Dog":
+                    GetComponent<MoonDogBehavior>().act();
+                    break;
+                default:
+                    wallFamiliarity.addPoints(amountOfPoints);
+                    interacted = true;
+                    break;
+            }
         }
     }
 }

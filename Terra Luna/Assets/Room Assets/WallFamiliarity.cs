@@ -24,7 +24,6 @@ public class WallFamiliarity : MonoBehaviour
     {
         foreach(filterController filter in filters)
         {
-            Debug.Log(current);
             filter.updateShaderOpacity(current);
         }
     }
