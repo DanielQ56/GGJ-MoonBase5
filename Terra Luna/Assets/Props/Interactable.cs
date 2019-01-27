@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     [SerializeField] int amountOfPoints;
+    GameObject player;
 
     bool interacted = false;
     WallFamiliarity wallFamiliarity;
@@ -12,6 +13,7 @@ public class Interactable : MonoBehaviour
     void Start()
     {
         wallFamiliarity = GetComponentInParent<WallFamiliarity>();
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -34,6 +36,8 @@ public class Interactable : MonoBehaviour
                     break;
                 default:
                     wallFamiliarity.addPoints(amountOfPoints);
+                    player.GetComponent<playerFamiliarity>().addToFamiliarity(amountOfPoints);
+                    Debug.Log("Player familiarity: " + player.GetComponent<playerFamiliarity>().currentFamiliarity());
                     interacted = true;
                     break;
             }

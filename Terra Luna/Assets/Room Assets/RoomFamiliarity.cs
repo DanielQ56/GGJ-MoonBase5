@@ -27,7 +27,8 @@ public class RoomFamiliarity : MonoBehaviour
     public void addPoints(int numPoints)
     {
         totalNumPoints += numPoints;
-        player.GetComponent<playerFamiliarity>().addToFamiliarity(numPoints);
+        Debug.Log(gameObject.name + " Familiarity: " + numPoints);
+        //player.GetComponent<playerFamiliarity>().addToFamiliarity(numPoints);
         allRoomPoints += numPoints;
         Debug.Log(totalNumPoints);
     }
