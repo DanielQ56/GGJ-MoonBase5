@@ -31,11 +31,14 @@ public class playerFamiliarity : MonoBehaviour
     public void addToFamiliarity(float pointsToAdd)
     // Make pointsToAdd negative if you want to remove
     {
+        Debug.Log("Points to add: " + pointsToAdd);
+        Debug.Log("Before" + currentPoints);
         if (pointsToAdd > (maxPoints - currentPoints)){
             currentPoints = maxPoints;
         } else {
             currentPoints += pointsToAdd;
         }
+        Debug.Log("After" + currentPoints);
     }
 
 
