@@ -1,4 +1,4 @@
-﻿ using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,10 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-<<<<<<< Updated upstream
-        m_RigidBody.velocity = transform.forward * Input.GetAxis("Vertical") * moveSpeed;
-        //animator.SetFloat("Forward", Input.GetAxis("Vertical"));
-=======
         float mVertical = Input.GetAxis("Vertical");
         //m_RigidBody.velocity = transform.forward * Input.GetAxis("Vertical") * moveSpeed;
 
@@ -46,8 +42,6 @@ public class PlayerMovement : MonoBehaviour
 
         m_RigidBody.velocity = (new Vector3(transform.forward.x * moveSpeed, m_RigidBody.velocity.y, transform.forward.z * moveSpeed) * mVertical);
 
-        
->>>>>>> Stashed changes
     }
 
     void Rotate()
