@@ -13,6 +13,7 @@ using UnityEngine;
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
+    static bool canMove = true;
         
         private void Start()
         {
@@ -39,14 +40,17 @@ using UnityEngine;
         }
 
 
-        // Fixed update is called in sync with physics
-        private void FixedUpdate()
+    // Fixed update is called in sync with physics
+    private void FixedUpdate()
+    {
+        if (canMove)
         {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
-            m_Move = v*transform.forward + h*transform.right;
+            m_Move = v * transform.forward + h * transform.right;
             // pass all parameters to the character control script
             m_Character.Move(m_Move);
         }
+    }
     }
 //}
