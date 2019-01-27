@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class playerInteract : MonoBehaviour
 {
@@ -9,33 +7,33 @@ public class playerInteract : MonoBehaviour
     [SerializeField] float boxY;
     [SerializeField] float boxZ;
     [SerializeField] float maxDistance;
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
 
             Vector3 fwd = transform.TransformDirection(Vector3.forward);
             RaycastHit[] boxCasts = Physics.BoxCastAll(transform.position + transform.forward * rayDist, new Vector3(boxX, boxY, boxZ), transform.forward, transform.rotation, maxDistance);
             if (boxCasts.Length > 0)
             {
-                foreach (RaycastHit ray in boxCasts)
+                if (CheckForInteractableTags(boxCasts))
                 {
-					Debug.Log("Testing");
-					Debug.Log(ray.collider.gameObject.name);
-                    if (ray.collider.tag == "Interactive")
+                    foreach (RaycastHit ray in boxCasts)
                     {
-                        ray.collider.gameObject.GetComponent<Interactable>().interact();
-                    }
-                    else
-                    {
-                        doorInteraction(ray);
+                        if (ray.collider.tag == "Interactive")
+                        {
+                            if (Input.GetKeyDown(KeyCode.Space))
+                                ray.collider.gameObject.GetComponent<Interactable>().interact();
+                        }
+                        else
+                        {
+                            doorInteraction(ray);
+                        }
                     }
                 }
             }
@@ -48,7 +46,19 @@ public class playerInteract : MonoBehaviour
                     doorInteraction(hit);
                 }
             }*/
+        
+    }
+
+    bool CheckForInteractableTags(RaycastHit[] casts)
+    {
+        foreach(RaycastHit ray in casts )
+        {
+            if(ray.collider.tag == "Interactive")
+            {
+                return true;
+            }
         }
+        return false;
     }
 	
 	

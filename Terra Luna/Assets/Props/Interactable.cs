@@ -39,6 +39,7 @@ public class Interactable : MonoBehaviour
                     player.GetComponent<playerFamiliarity>().addToFamiliarity(amountOfPoints);
                     Debug.Log("Player familiarity: " + player.GetComponent<playerFamiliarity>().currentFamiliarity());
                     interacted = true;
+                    gameObject.tag = "Untagged";
                     break;
             }
         }
