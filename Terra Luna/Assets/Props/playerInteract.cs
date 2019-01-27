@@ -27,6 +27,8 @@ public class playerInteract : MonoBehaviour
             {
                 foreach (RaycastHit ray in boxCasts)
                 {
+					Debug.Log("Testing");
+					Debug.Log(ray.collider.gameObject.name);
                     if (ray.collider.tag == "Interactive")
                     {
                         ray.collider.gameObject.GetComponent<Interactable>().interact();
