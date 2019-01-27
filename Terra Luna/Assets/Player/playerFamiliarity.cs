@@ -20,7 +20,7 @@ public class playerFamiliarity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        testChangingFamiliarity();
+        //testChangingFamiliarity();
     }
 
     public float currentFamiliarity()

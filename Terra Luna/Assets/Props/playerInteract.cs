@@ -21,21 +21,19 @@ public class playerInteract : MonoBehaviour
             RaycastHit[] boxCasts = Physics.BoxCastAll(transform.position + transform.forward * rayDist, new Vector3(boxX, boxY, boxZ), transform.forward, transform.rotation, maxDistance);
             if (boxCasts.Length > 0)
             {
-                if (CheckForInteractableTags(boxCasts))
-                {
-                    foreach (RaycastHit ray in boxCasts)
-                    {
-                        if (ray.collider.tag == "Interactive")
-                        {
-                            if (Input.GetKeyDown(KeyCode.Space))
-                                ray.collider.gameObject.GetComponent<Interactable>().interact();
-                        }
-                        else
-                        {
-                            doorInteraction(ray);
-                        }
-                    }
-                }
+				foreach (RaycastHit ray in boxCasts)
+				{
+					if (ray.collider.tag == "Interactive")
+					{
+						if (Input.GetKeyDown(KeyCode.Space))
+							ray.collider.gameObject.GetComponent<Interactable>().interact();
+					}
+					else
+					{
+						doorInteraction(ray);
+					}
+				}
+                
             }
 
             /*if(Physics.Raycast(transform.position, fwd, out hit, rayDist)) {
