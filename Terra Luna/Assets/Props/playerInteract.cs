@@ -8,9 +8,12 @@ public class playerInteract : MonoBehaviour
     [SerializeField] float boxZ;
     [SerializeField] float maxDistance;
 
+
+    CanInteractText text;
     // Start is called before the first frame update
     void Start()
     {
+        text = GetComponent<CanInteractText>();
     }
 
     // Update is called once per frame
@@ -21,19 +24,26 @@ public class playerInteract : MonoBehaviour
             RaycastHit[] boxCasts = Physics.BoxCastAll(transform.position + transform.forward * rayDist, new Vector3(boxX, boxY, boxZ), transform.forward, transform.rotation, maxDistance);
             if (boxCasts.Length > 0)
             {
-				foreach (RaycastHit ray in boxCasts)
-				{
-					if (ray.collider.tag == "Interactive")
-					{
-						if (Input.GetKeyDown(KeyCode.Space))
-							ray.collider.gameObject.GetComponent<Interactable>().interact();
-					}
-					else
-					{
-						doorInteraction(ray);
-					}
-				}
-                
+                if (CheckForInteractableTags(boxCasts))
+                {
+                    text.PopUp();
+                    foreach (RaycastHit ray in boxCasts)
+                    {
+                        if (ray.collider.tag == "Interactive")
+                        {
+                            if (Input.GetKeyDown(KeyCode.Space))
+                                ray.collider.gameObject.GetComponent<Interactable>().interact();
+                        }
+                        else
+                        {
+                            doorInteraction(ray);
+                        }
+                    }
+                }
+                else
+                {
+                    text.OutOfView();
+                }
             }
 
             /*if(Physics.Raycast(transform.position, fwd, out hit, rayDist)) {
@@ -51,7 +61,7 @@ public class playerInteract : MonoBehaviour
     {
         foreach(RaycastHit ray in casts )
         {
-            if(ray.collider.tag == "Interactive")
+            if(ray.collider.tag == "Interactive" || ray.collider.tag == "Door")
             {
                 return true;
             }
