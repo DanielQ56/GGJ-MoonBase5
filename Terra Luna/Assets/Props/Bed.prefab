@@ -164,6 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3906568012602629336}
   - component: {fileID: 7518079403408885538}
+  - component: {fileID: 4833366646300343354}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Interactive
@@ -202,6 +203,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
+--- !u!114 &4833366646300343354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906568012602458360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f9d05fcbdbea7479c367fede1aeeef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfPoints: 0
 --- !u!1 &3906568012602458362
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +227,6 @@ GameObject:
   - component: {fileID: 3906568012602629338}
   - component: {fileID: 3906568012603399418}
   - component: {fileID: 3906568012604399162}
-  - component: {fileID: 3906568012602458245}
   m_Layer: 0
   m_Name: BedFrame01
   m_TagString: Untagged
@@ -280,17 +293,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3906568012602458245
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3906568012602458362}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300004, guid: 96448b85a8919514bb10865e42617972, type: 3}

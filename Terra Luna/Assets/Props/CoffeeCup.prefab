@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3484646409535373454}
   - component: {fileID: 5451136493183417350}
   - component: {fileID: 3434917535583908887}
+  - component: {fileID: 6099430729813036843}
   m_Layer: 0
   m_Name: CoffeeCup
   m_TagString: Interactive
@@ -92,3 +93,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 4be2e90c3889d674199a54df34caa4e8, type: 3}
+--- !u!114 &6099430729813036843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3138622492374647915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f9d05fcbdbea7479c367fede1aeeef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfPoints: 0

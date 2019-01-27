@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4809763670056310515}
   - component: {fileID: 4809763670056310518}
   - component: {fileID: 4809763670056310513}
-  - component: {fileID: 4809763670056310512}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Untagged
@@ -78,20 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &4809763670056310512
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4809763670056310514}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &4809763671641125642
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4809763671641125643}
   - component: {fileID: 1802612961394008425}
+  - component: {fileID: 266002901304286501}
   m_Layer: 0
   m_Name: Meal Set
   m_TagString: Interactive
@@ -139,6 +125,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
+--- !u!114 &266002901304286501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809763671641125642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f9d05fcbdbea7479c367fede1aeeef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfPoints: 0
 --- !u!1001 &4809763670737548043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,7 +245,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6513d69394d84f644905e98f04845e70, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7383640344265835303, guid: 81afe795452b4f74ea23a6695e91fec0, type: 3}
+    - {fileID: 5196728817734827122, guid: 81afe795452b4f74ea23a6695e91fec0, type: 3}
+    - {fileID: 7755939448398968046, guid: 81afe795452b4f74ea23a6695e91fec0, type: 3}
+    - {fileID: 4472256515846600155, guid: 81afe795452b4f74ea23a6695e91fec0, type: 3}
+    - {fileID: 7468440076510499914, guid: 81afe795452b4f74ea23a6695e91fec0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 81afe795452b4f74ea23a6695e91fec0, type: 3}
 --- !u!4 &4261033516069033483 stripped
 Transform:

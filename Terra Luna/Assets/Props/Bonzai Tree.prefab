@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2900580974390993317}
   - component: {fileID: 2900580974389994341}
   - component: {fileID: 551736335422068346}
+  - component: {fileID: 5456190398043080364}
   m_Layer: 0
   m_Name: Bonzai Tree
   m_TagString: Interactive
@@ -92,4 +93,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: c042f9c54443d2f45828c1c78cb43a5c, type: 3}
-
+--- !u!114 &5456190398043080364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2900580974392196517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f9d05fcbdbea7479c367fede1aeeef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfPoints: 0
