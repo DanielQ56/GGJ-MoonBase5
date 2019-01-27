@@ -8,6 +8,7 @@ public class treeController : MonoBehaviour
     public int SecondStageMinimum = 25;
     public int ThirdStageMinimum = 50;
     public int FinalStageMinimum = 75;
+    public GameObject[] rooms;
 
     // "stageObject" means the different GameObjects containing different meshes/etc.
     // for the different stages of the tree
@@ -27,7 +28,7 @@ public class treeController : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         player = GameObject.FindWithTag("Player");
-        aRoom = GameObject.FindGameObjectWithTag("Room");
+        aRoom = rooms[0];
         currentStageObject = initialStageObject;
         currentStageObject.SetActive(true);
     }
@@ -40,7 +41,7 @@ public class treeController : MonoBehaviour
 
     void updateTreeState()
     {
-        float current = aRoom.GetComponent<RoomFamiliarity>().getAllRoomPoints();
+        float current = player.GetComponent<playerFamiliarity>().currentFamiliarity();
 
         if (current > FinalStageMinimum){
             changeTreeStage(finalStageObject);

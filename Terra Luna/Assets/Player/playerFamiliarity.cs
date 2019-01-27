@@ -41,9 +41,9 @@ public class playerFamiliarity : MonoBehaviour
 
     void testChangingFamiliarity()
     {
-        if (Input.GetKey("q")){
+        if (Input.GetKey("k")){
             addToFamiliarity(-1);
-        } else if (Input.GetKey("e")){
+        } else if (Input.GetKey("i")){
             addToFamiliarity(1);
         }
     }
