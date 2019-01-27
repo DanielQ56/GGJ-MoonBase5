@@ -40,7 +40,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             if (!reading)
             {
-               ReadMessage(computer.GetComponent<ReceivedMessages>().getCurrentMessage());
+             //  ReadMessage(computer.GetComponent<ReceivedMessages>().getCurrentMessage());
                 reading = true;
             }
             else
@@ -66,7 +66,7 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 tpc.Move(Vector3.zero);
                 movingToComputer = false;
-                read = true;
+                //read = true;
             }
             tpc.Move(transform.forward);
         }
