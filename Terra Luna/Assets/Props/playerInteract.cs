@@ -10,10 +10,14 @@ public class playerInteract : MonoBehaviour
 
 
     CanInteractText text;
+    CapsuleCollider coll;
+
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<CanInteractText>();
+        coll = GetComponent<CapsuleCollider>();
+
     }
 
     // Update is called once per frame
@@ -21,7 +25,7 @@ public class playerInteract : MonoBehaviour
     {
 
             Vector3 fwd = transform.TransformDirection(Vector3.forward);
-            RaycastHit[] boxCasts = Physics.BoxCastAll(transform.position + transform.forward * rayDist, new Vector3(boxX, boxY, boxZ), transform.forward, transform.rotation, maxDistance);
+            RaycastHit[] boxCasts = Physics.BoxCastAll(transform.position + Vector3.up * coll.bounds.extents.y  + transform.forward * rayDist, new Vector3(boxX, boxY, boxZ), transform.forward, transform.rotation, maxDistance);
             if (boxCasts.Length > 0)
             {
                 if (CheckForInteractableTags(boxCasts))
