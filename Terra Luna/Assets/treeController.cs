@@ -15,6 +15,14 @@ public class treeController : MonoBehaviour
     public GameObject secondStageObject;
     public GameObject finalStageObject;
 
+	public AudioSource firstMusic;
+	public AudioSource secondMusic;
+	public AudioSource thirdMusic;
+	
+	private bool playedFirst = false;
+	private bool playedSecond = false;
+	private bool playedThird = false;
+	
     GameObject player;
     GameObject aRoom;
     GameObject currentStageObject;
@@ -52,10 +60,29 @@ public class treeController : MonoBehaviour
         float current = player.GetComponent<playerFamiliarity>().currentFamiliarity();
 
         if (current == totalMaxPoints){
+			
+			if (!playedThird) {
+				Debug.Log("Playing Third");
+				secondMusic.Stop();
+				thirdMusic.Play();
+				playedThird = true;
+			}
             changeTreeStage(finalStageObject);
         } else if (current > SecondStageMinimum){
+			if(!playedSecond) {
+				Debug.Log("Playing Second");
+				firstMusic.Stop();
+				secondMusic.Play();
+				playedSecond = true;
+			}
             changeTreeStage(secondStageObject);
         } else {
+			if(!playedFirst) {
+				Debug.Log("Playing First");
+				firstMusic.Play();
+				playedFirst = true;
+			}
+			
             changeTreeStage(firstStageObject);
         }
         

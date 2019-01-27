@@ -8,6 +8,8 @@ public class cameraTransition : MonoBehaviour
     AxisState cameraYAxis;
     [SerializeField] float downAngle = 0.1f;
     [SerializeField] float upAngle = 0.5f;
+    public GameObject treeLookPoint;
+    [SerializeField] GameObject playerLookPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,12 +36,28 @@ public class cameraTransition : MonoBehaviour
     public void transitionDown()
     {
         //GetComponent<CinemachineFreeLook>().m_YAxis.Value = (float)Mathf.Lerp((float)0.1,(float)0.5,Time.deltaTime);
-        GetComponent<CinemachineFreeLook>().m_YAxis.Value = downAngle;
+        if (GetComponent<CinemachineFreeLook>().LookAt != playerLookPoint.transform){
+            GetComponent<CinemachineFreeLook>().LookAt = playerLookPoint.transform;
+        }
+        changeCameraYAngle(downAngle);
     }
 
     public void transitionUp()
     {
         //GetComponent<CinemachineFreeLook>().m_YAxis.Value = Mathf.Lerp((float)0.1, (float)0.5, 1);
-        GetComponent<CinemachineFreeLook>().m_YAxis.Value = upAngle;
+        if (GetComponent<CinemachineFreeLook>().LookAt != playerLookPoint.transform){
+            GetComponent<CinemachineFreeLook>().LookAt = playerLookPoint.transform;
+        }
+        changeCameraYAngle(upAngle);
+    }
+
+    public void treeTransition()
+    {
+        changeCameraYAngle(downAngle);
+        GetComponent<CinemachineFreeLook>().LookAt = treeLookPoint.transform;
+    }
+
+    public void changeCameraYAngle(float newAngle){
+        GetComponent<CinemachineFreeLook>().m_YAxis.Value = newAngle;
     }
 }
