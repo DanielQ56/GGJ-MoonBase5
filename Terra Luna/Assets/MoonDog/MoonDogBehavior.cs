@@ -40,10 +40,10 @@ public class MoonDogBehavior : MonoBehaviour
 
     void followPlayer()
     {
-        transform.LookAt(new Vector3(player.transform.position.x, 0, player.transform.position.z));
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
         if (distanceAway() > maxDistanceAway)
         {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), moveSpeed * Time.deltaTime);
             
         }
 
