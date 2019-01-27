@@ -30,8 +30,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
+<<<<<<< Updated upstream
         m_RigidBody.velocity = transform.forward * Input.GetAxis("Vertical") * moveSpeed;
         //animator.SetFloat("Forward", Input.GetAxis("Vertical"));
+=======
+        float mVertical = Input.GetAxis("Vertical");
+        //m_RigidBody.velocity = transform.forward * Input.GetAxis("Vertical") * moveSpeed;
+
+        /* Vector3 newMovement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+        m_RigidBody.AddForce(newMovement * moveSpeed);
+        if (m_RigidBody.velocity.magnitude > maxSpeed){
+            m_RigidBody.velocity = m_RigidBody.velocity.normalized * maxSpeed;
+        }*/
+
+
+        m_RigidBody.velocity = (new Vector3(transform.forward.x * moveSpeed, m_RigidBody.velocity.y, transform.forward.z * moveSpeed) * mVertical);
+
+        
+>>>>>>> Stashed changes
     }
 
     void Rotate()
