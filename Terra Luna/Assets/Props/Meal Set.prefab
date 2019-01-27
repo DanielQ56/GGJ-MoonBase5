@@ -101,9 +101,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4809763671641125643}
+  - component: {fileID: 1802612961394008425}
   m_Layer: 0
   m_Name: Meal Set
-  m_TagString: Untagged
+  m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +125,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1802612961394008425
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809763671641125642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1001 &4809763670737548043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -206,17 +221,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 5373961296132650079, guid: 81afe795452b4f74ea23a6695e91fec0,
+    - target: {fileID: 2199820365077904502, guid: 81afe795452b4f74ea23a6695e91fec0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6513d69394d84f644905e98f04845e70, type: 2}
     - target: {fileID: 69355408709710814, guid: 81afe795452b4f74ea23a6695e91fec0,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6513d69394d84f644905e98f04845e70, type: 2}
-    - target: {fileID: 2199820365077904502, guid: 81afe795452b4f74ea23a6695e91fec0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -227,6 +237,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 6513d69394d84f644905e98f04845e70, type: 2}
     - target: {fileID: 119139718276648783, guid: 81afe795452b4f74ea23a6695e91fec0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6513d69394d84f644905e98f04845e70, type: 2}
+    - target: {fileID: 5373961296132650079, guid: 81afe795452b4f74ea23a6695e91fec0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
