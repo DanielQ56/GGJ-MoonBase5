@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomFamiliarity : MonoBehaviour
 {
-    [SerializeField] int pointPerInteract;
+     int pointsPerInteract;
     [SerializeField] int maxPoints;
     [SerializeField] GameObject player;
     [SerializeField] GameObject propManager;
@@ -12,7 +12,7 @@ public class RoomFamiliarity : MonoBehaviour
     int totalNumPoints = 0;
     static int allRoomPoints = 0; // Points across all rooms
     int propAmount;
-    [SerializeField] int propAmount2;
+    //[SerializeField] int propAmount2;
 
     WallFamiliarity[] wallFam;
     Interactable[] props;
@@ -38,11 +38,19 @@ public class RoomFamiliarity : MonoBehaviour
         Debug.Log(totalNumPoints);
     }
 
+    public void addRoomPoints()
+    {
+        totalNumPoints += pointsPerInteract;
+        Debug.Log(gameObject.name + " Familiarity: " + pointsPerInteract);
+        player.GetComponent<playerFamiliarity>().addToFamiliarity(pointsPerInteract);
+        allRoomPoints += pointsPerInteract;
+        Debug.Log(totalNumPoints);
+    }
+
     public void addRoomColor()
     {
-        //propAmount = props.Length;
-        pointPerInteract = maxPoints / propAmount;
-        if(totalNumPoints % pointPerInteract == 0)
+        pointsPerInteract = maxPoints / propAmount;
+        if(totalNumPoints % pointsPerInteract == 0)
         {
             foreach(WallFamiliarity wall in wallFam)
             {
@@ -53,5 +61,10 @@ public class RoomFamiliarity : MonoBehaviour
     public int getAllRoomPoints()
     {
         return allRoomPoints;
+    }
+
+    public int getMaxPoints()
+    {
+        return maxPoints;
     }
 }

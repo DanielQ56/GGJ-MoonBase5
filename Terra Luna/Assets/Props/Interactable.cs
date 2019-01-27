@@ -35,8 +35,9 @@ public class Interactable : MonoBehaviour
                     GetComponent<MoonDogBehavior>().act();
                     break;
                 default:
-                    wallFamiliarity.addPoints(amountOfPoints);
-                    player.GetComponent<playerFamiliarity>().addToFamiliarity(amountOfPoints);
+                    //wallFamiliarity.addPoints(amountOfPoints);
+                    wallFamiliarity.addRoomPoints();
+                    //player.GetComponent<playerFamiliarity>().addToFamiliarity(amountOfPoints);
                     Debug.Log("Player familiarity: " + player.GetComponent<playerFamiliarity>().currentFamiliarity());
                     interacted = true;
                     gameObject.tag = "Untagged";

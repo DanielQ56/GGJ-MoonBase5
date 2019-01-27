@@ -37,6 +37,11 @@ public class WallFamiliarity : MonoBehaviour
         room.addPoints(numPoints);
     }
 
+    public void addRoomPoints()
+    {
+        room.addRoomPoints();
+    }
+
     public int getPropCount(){
         /*
         propCount = 0;
