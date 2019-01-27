@@ -9,6 +9,7 @@ public class RoomFamiliarity : MonoBehaviour
     [SerializeField] GameObject player;
 
     int totalNumPoints = 0;
+    static int allRoomPoints = 0; // Points across all rooms
 
     WallFamiliarity[] wallFam;
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class RoomFamiliarity : MonoBehaviour
     {
         totalNumPoints += numPoints;
         player.GetComponent<playerFamiliarity>().addToFamiliarity(numPoints);
+        allRoomPoints += numPoints;
         Debug.Log(totalNumPoints);
     }
 
@@ -39,5 +41,9 @@ public class RoomFamiliarity : MonoBehaviour
                 wall.colorWalls(((float)totalNumPoints / (float)maxPoints) * 100);
             }
         }
+    }
+    public int getAllRoomPoints()
+    {
+        return allRoomPoints;
     }
 }
