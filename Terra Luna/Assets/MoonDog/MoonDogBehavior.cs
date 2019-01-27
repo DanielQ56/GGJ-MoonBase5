@@ -34,7 +34,7 @@ public class MoonDogBehavior : MonoBehaviour
         }
         else
         {
-
+            following = false;
         }
     }
 
