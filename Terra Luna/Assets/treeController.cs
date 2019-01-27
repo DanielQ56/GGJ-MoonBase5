@@ -17,6 +17,7 @@ public class treeController : MonoBehaviour
     public GameObject finalStageObject;
 
     GameObject player;
+    GameObject aRoom;
     GameObject currentStageObject;
 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class treeController : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         player = GameObject.FindWithTag("Player");
+        aRoom = GameObject.FindGameObjectWithTag("Room");
         currentStageObject = initialStageObject;
         currentStageObject.SetActive(true);
     }
@@ -38,7 +40,7 @@ public class treeController : MonoBehaviour
 
     void updateTreeState()
     {
-        float current = player.GetComponent<playerFamiliarity>().currentFamiliarity();
+        float current = aRoom.GetComponent<RoomFamiliarity>().getAllRoomPoints();
 
         if (current > FinalStageMinimum){
             changeTreeStage(finalStageObject);
