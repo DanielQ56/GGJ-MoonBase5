@@ -13,7 +13,7 @@ using UnityEngine;
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
-    static bool canMove = true;
+        public static bool canMove = true;
         
         private void Start()
         {

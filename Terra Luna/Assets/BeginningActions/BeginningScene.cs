@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class NewBehaviourScript : MonoBehaviour
+public class BeginningScene : MonoBehaviour
 {
     [SerializeField] Transform stopPos;
     [SerializeField] GameObject computer;
     [SerializeField] float initialWaitTime;
-    [SerializeField] Camera camera;
-    [SerializeField] TextMeshPro text;
 
     Rigidbody m_Body;
     bool movingToComputer;
     Vector3 c_Pos;
     ThirdPersonCharacter tpc;
+    ReadMessages r;
+    bool shouldRead = false;
     bool reading = false;
     bool doneReading = false;
     // Start is called before the first frame update
@@ -23,8 +23,7 @@ public class NewBehaviourScript : MonoBehaviour
         tpc = GetComponent<ThirdPersonCharacter>();
         c_Pos = new Vector3(stopPos.position.x, 0, stopPos.position.z);
         m_Body = GetComponent<Rigidbody>();
-        StartCoroutine(moveToComputer());
-        
+        BeginningSequence();
     }
 
     // Update is called once per frame
@@ -36,27 +35,21 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Read()
     {
-        if (!doneReading)
+        if (shouldRead)
         {
-            if (!reading)
+            if(!reading)
             {
-               ReadMessage(computer.GetComponent<ReceivedMessages>().getCurrentMessage());
+                r.ReadMessage(computer.GetComponent<ReceivedMessages>().getCurrentMessage());
                 reading = true;
             }
-            else
+            else if(r.doneReadingMessage())
             {
-                if(reading)
-                {
-
-                }
+                allowPlayerToMove();
             }
         }
+       
     }
 
-    void ReadMessage(string message)
-    {
-
-    }
 
     void Move()
     {
@@ -66,7 +59,7 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 tpc.Move(Vector3.zero);
                 movingToComputer = false;
-                read = true;
+                
             }
             tpc.Move(transform.forward);
         }
@@ -74,7 +67,8 @@ public class NewBehaviourScript : MonoBehaviour
 
     void BeginningSequence()
     {
-        StartCoroutine(moveToComputer());
+        if(!movingToComputer)
+            StartCoroutine(moveToComputer());
     }
 
     IEnumerator moveToComputer()
@@ -82,10 +76,11 @@ public class NewBehaviourScript : MonoBehaviour
         yield return new WaitForSeconds(initialWaitTime);
         movingToComputer = true;
     } 
+    
 
-    IEnumerator ReadMessage()
+    void allowPlayerToMove()
     {
-        yield return new WaitForSeconds(1f);
+        ThirdPersonUserControl.canMove = true;
     }
 
 
