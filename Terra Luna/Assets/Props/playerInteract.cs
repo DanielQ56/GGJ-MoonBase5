@@ -18,33 +18,35 @@ public class playerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		RaycastHit hit;
-        
-		Vector3 fwd = transform.TransformDirection(Vector3.forward);
-        RaycastHit[] boxCasts = Physics.BoxCastAll(transform.position + transform.forward * rayDist, new Vector3(boxX, boxY, boxZ), transform.forward, transform.rotation, maxDistance);
-        if(boxCasts.Length > 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            foreach(RaycastHit ray in boxCasts)
+
+            Vector3 fwd = transform.TransformDirection(Vector3.forward);
+            RaycastHit[] boxCasts = Physics.BoxCastAll(transform.position + transform.forward * rayDist, new Vector3(boxX, boxY, boxZ), transform.forward, transform.rotation, maxDistance);
+            if (boxCasts.Length > 0)
             {
-                if(ray.collider.tag == "Interactive" && Input.GetKeyDown(KeyCode.Space))
+                foreach (RaycastHit ray in boxCasts)
                 {
-                    ray.collider.gameObject.GetComponent<Interactable>().interact();
-                }
-                else
-                {
-                    doorInteraction(ray);
+                    if (ray.collider.tag == "Interactive")
+                    {
+                        ray.collider.gameObject.GetComponent<Interactable>().interact();
+                    }
+                    else
+                    {
+                        doorInteraction(ray);
+                    }
                 }
             }
-        }
 
-		/*if(Physics.Raycast(transform.position, fwd, out hit, rayDist)) {
-			if(hit.collider.tag == "Interactive" && Input.GetKeyDown(KeyCode.Space)) {
-                hit.collider.gameObject.GetComponent<Interactable>().interact();
-            } else {
-				//door can only be closed on an update if a different interaction isnt happening
-				doorInteraction(hit);
-			}
-		}*/
+            /*if(Physics.Raycast(transform.position, fwd, out hit, rayDist)) {
+                if(hit.collider.tag == "Interactive" && Input.GetKeyDown(KeyCode.Space)) {
+                    hit.collider.gameObject.GetComponent<Interactable>().interact();
+                } else {
+                    //door can only be closed on an update if a different interaction isnt happening
+                    doorInteraction(hit);
+                }
+            }*/
+        }
     }
 	
 	
