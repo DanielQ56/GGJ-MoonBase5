@@ -11,6 +11,8 @@ public class playerInteract : MonoBehaviour
 
     CanInteractText text;
     CapsuleCollider coll;
+	
+	//public AudioSource interactAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +37,12 @@ public class playerInteract : MonoBehaviour
                     {
                         if (ray.collider.tag == "Interactive")
                         {
-                            if (Input.GetKeyDown(KeyCode.Space))
-                                ray.collider.gameObject.GetComponent<Interactable>().interact();
+                            if (Input.GetKeyDown(KeyCode.Space)) {
+								//interactAudio.Play();
+								GameObject.FindWithTag("InteractionTag").GetComponent<AudioSource>().Play();
+								ray.collider.gameObject.GetComponent<Interactable>().interact();
+							}
+                                
                         }
                         else
                         {

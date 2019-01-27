@@ -9,6 +9,7 @@ TagManager:
   - DoorHinge
   - Room
   - ShowOnPause
+  - InteractionTag
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,9 @@ public class doorScript : MonoBehaviour
 	private Quaternion DoorClose;
 	private bool doorIsOpen;
 	
+	public AudioSource doorOpen;
+	//public AudioSource doorClose;
+	private bool audioPlayed = false;
 	
 	bool closeDoor = false;
 	bool waitActive = false;
@@ -29,11 +32,16 @@ public class doorScript : MonoBehaviour
     void Update()
     {
        if(triggerOpen == true) {
+		    if (!audioPlayed) {
+				doorOpen.Play();
+				audioPlayed = true;
+			}
 			var DoorOpen = Quaternion.Euler(0, -90f, 0);
 		    transform.localRotation = Quaternion.Slerp(transform.localRotation, DoorOpen, Time.deltaTime*Smooth);
 		    doorIsOpen = true;
 			triggerDoorClose();
 	   } else if (doorIsOpen && !triggerOpen) { //close door
+			//doorClose.Play();
 			var DoorClose = Quaternion.Euler(0, 0f, 0);
 		    transform.localRotation = Quaternion.Slerp(transform.localRotation, DoorClose, Time.deltaTime*Smooth);
 		    doorIsOpen = false;
