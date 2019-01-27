@@ -8,11 +8,11 @@ public class doorTransition : MonoBehaviour
     public bool startingHasPassedThrough = false;
 
     cameraTransition cameraTransitionManager;
-    bool hasPassedThrough;
+    static bool inHallway;
     void Start()
     {
         cameraTransitionManager = GameObject.FindWithTag("MainCamera").transform.GetChild(0).gameObject.GetComponent<cameraTransition>();
-        hasPassedThrough = startingHasPassedThrough;
+        inHallway = startingHasPassedThrough;
     }
 
     // Update is called once per frame
@@ -23,12 +23,14 @@ public class doorTransition : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!hasPassedThrough){
-            cameraTransitionManager.transitionUp();
-            hasPassedThrough = true;
-        } else {
+        if (!inHallway){
             cameraTransitionManager.transitionDown();
-            hasPassedThrough = false;
+            inHallway = true;
+            Debug.Log(inHallway);
+        } else {
+            cameraTransitionManager.transitionUp();
+            inHallway = false;
+            Debug.Log(inHallway);
         }
     }
 }
