@@ -9,6 +9,7 @@ public class Interactable : MonoBehaviour
 
     bool interacted = false;
     WallFamiliarity wallFamiliarity;
+	public AudioSource doggoSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class Interactable : MonoBehaviour
             switch(tag)
             {
                 case "Moon Dog":
+					doggoSound.Play();
                     GetComponent<MoonDogBehavior>().act();
                     break;
                 default:
