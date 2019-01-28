@@ -269,6 +269,8 @@ GameObject:
   - component: {fileID: 2950370906750048741}
   - component: {fileID: 2950370906750048740}
   - component: {fileID: 1494358522}
+  - component: {fileID: 8828959933608764795}
+  - component: {fileID: 2928601937411563749}
   m_Layer: 0
   m_Name: MainPlayer
   m_TagString: Player
@@ -433,6 +435,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1277186069}
+--- !u!114 &8828959933608764795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2950370906750048742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa49397d40dc2ba4cb1ded3d4b7fc81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageText: {fileID: 0}
+--- !u!114 &2928601937411563749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2950370906750048742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 816d6089f35f2904e9cb96816acf76fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopPos: {fileID: 0}
+  computer: {fileID: 0}
+  initialWaitTime: 0
 --- !u!1 &5304051826319102993
 GameObject:
   m_ObjectHideFlags: 0

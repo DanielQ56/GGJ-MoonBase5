@@ -10,6 +10,7 @@ TagManager:
   - Room
   - ShowOnPause
   - InteractionTag
+  - Main Computer
   layers:
   - Default
   - TransparentFX

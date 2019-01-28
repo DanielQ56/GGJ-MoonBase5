@@ -5,7 +5,6 @@ using TMPro;
 
 public class BeginningScene : MonoBehaviour
 {
-    [SerializeField] Transform stopPos;
     [SerializeField] GameObject computer;
     [SerializeField] float initialWaitTime;
 
@@ -21,7 +20,7 @@ public class BeginningScene : MonoBehaviour
     void Start()
     {
         tpc = GetComponent<ThirdPersonCharacter>();
-        c_Pos = new Vector3(stopPos.position.x, 0, stopPos.position.z);
+        c_Pos = computer.transform.forward;
         m_Body = GetComponent<Rigidbody>();
         BeginningSequence();
     }
@@ -81,6 +80,7 @@ public class BeginningScene : MonoBehaviour
     void allowPlayerToMove()
     {
         ThirdPersonUserControl.canMove = true;
+        GetComponent<BeginningScene>().enabled = false;
     }
 
 

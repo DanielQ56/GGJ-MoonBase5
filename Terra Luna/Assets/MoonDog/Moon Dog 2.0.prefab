@@ -16,12 +16,12 @@ GameObject:
   - component: {fileID: 92441177}
   - component: {fileID: 92441178}
   m_Layer: 0
-  m_Name: Moon Dog
+  m_Name: Moon Dog 2.0
   m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6821391471111179221
 Transform:
   m_ObjectHideFlags: 0
